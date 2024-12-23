@@ -19,6 +19,9 @@
     transition: 0.3s ease-in-out;
     cursor: pointer;
 }
+.nav-menu li{
+    cursor: pointer;
+}
 .nav-connect:hover{
     transform: scale(1.05);
 }
@@ -27,6 +30,9 @@
 }
 .nav-mob-open{
     display: none;
+}
+li.active {
+    border-bottom: 2px solid #DA7C25;
 }
 @media(max-width:768px){
     .navbar{

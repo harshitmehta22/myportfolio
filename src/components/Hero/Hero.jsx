@@ -7,7 +7,7 @@ const Hero = () => {
         <div className="hero">
             <img src=""/>
             <h1><span>I'm Harshit Mehta</span>, Frontend developer based in India.</h1>
-            <p>I am From Indore having 5+ Years in Frontend Development</p>
+            <p>With over 5+ years of expertise in crafting user-friendly and responsive web applications, I specialize in HTML, CSS, JavaScript, React.js, and modern frontend frameworks. My goal is to deliver high-performing, visually appealing, and scalable solutions tailored to meet your business needs.</p>
             <div className="hero-action">
                 <div className="hero-connect">
                     Connect with Me

@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import './Navbar.css'
 
 const Navbar = () => {
+    const [activeLink, setActiveLink] = useState('hero');
     const menuRef = useRef(null); // Initialize the ref to null
 
     const openMenu = () => {
@@ -15,11 +16,17 @@ const Navbar = () => {
             menuRef.current.style.right = "-350px";
         }
     };
+    const scrollToSection = (id) => {
+        setActiveLink(id);
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
     return(
         <>
         <div className="navbar">
-           {/* <img src=""/> */}
-           <h1>Logo</h1>
+           <h1>Developer</h1>
            <div className="nav-mob-open" onClick={openMenu}>
               <i class="fa-solid fa-bars"></i>
            </div>
@@ -27,11 +34,36 @@ const Navbar = () => {
             <div className="nav-mob-close" onClick={closeMenu}>
             <i class="fa fa-close"></i>
             </div>
-            <li>Home</li>
-            <li>About Me</li>
-            <li>Services</li>
-            <li>Portfolio</li>
-            <li>Contact Us</li>
+            <li
+            className={activeLink === 'hero' ? 'active' : ''}
+            onClick={() => scrollToSection('hero')}
+          >
+            Home
+          </li>
+          <li
+            className={activeLink === 'about' ? 'active' : ''}
+            onClick={() => scrollToSection('about')}
+          >
+            About Me
+          </li>
+          <li
+            className={activeLink === 'services' ? 'active' : ''}
+            onClick={() => scrollToSection('services')}
+          >
+            Services
+          </li>
+          <li
+            className={activeLink === 'mywork' ? 'active' : ''}
+            onClick={() => scrollToSection('mywork')}
+          >
+            Portfolio
+          </li>
+          <li
+            className={activeLink === 'contact' ? 'active' : ''}
+            onClick={() => scrollToSection('contact')}
+          >
+            Contact Us
+          </li>
            </ul>
            <div className="nav-connect">
             Connect With Me

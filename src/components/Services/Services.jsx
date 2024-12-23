@@ -2,6 +2,7 @@ import React from "react";
 import './Services.css'
 import Service from '../../assests/new.webp'
 import Service_data from "../../assests/service-data"
+import { Link } from "react-router-dom";
 
 const Services = () => {
     return (
@@ -18,8 +19,10 @@ const Services = () => {
                             <h2>{service.s_name}</h2>
                             <p>{service.s_desc}</p>
                             <div className="services-readmore">
+                            <Link to={`/services/${service.s_no}`}>
                                 <p>Read More</p>
-                                <i class="fa-solid fa-arrow-right"></i>
+                                <i className="fa-solid fa-arrow-right"></i>
+                            </Link>
                             </div>
                         </div>)
                     })}
